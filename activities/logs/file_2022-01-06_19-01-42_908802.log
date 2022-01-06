@@ -1,0 +1,30 @@
+2022-01-06T19:01:52.694911+0600 INFO User is in Registration view 
+2022-01-06T19:01:52.695410+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/btnChangeLanguage
+2022-01-06T19:01:57.717849+0600 INFO com.bkash.businessapp.uat:id/btnChangeLanguage is giving বাংলা
+2022-01-06T19:01:57.718880+0600 INFO User is in Login view 
+2022-01-06T19:01:57.719741+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/et_enter_pin
+2022-01-06T19:01:58.909763+0600 INFO ID: com.bkash.businessapp.uat:id/et_enter_pin is clicked
+2022-01-06T19:01:58.910525+0600 INFO User is in Login view 
+2022-01-06T19:01:58.910951+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_1
+2022-01-06T19:02:00.071639+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_1 is clicked
+2022-01-06T19:02:00.072296+0600 INFO User is in Login view 
+2022-01-06T19:02:00.072817+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_2
+2022-01-06T19:02:01.551625+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_2 is clicked
+2022-01-06T19:02:01.552418+0600 INFO User is in Login view 
+2022-01-06T19:02:01.552955+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_1
+2022-01-06T19:02:01.855682+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_1 is clicked
+2022-01-06T19:02:01.856395+0600 INFO User is in Login view 
+2022-01-06T19:02:01.856875+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_2
+2022-01-06T19:02:02.717557+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_2 is clicked
+2022-01-06T19:02:02.718239+0600 INFO User is in Login view 
+2022-01-06T19:02:02.718700+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_1
+2022-01-06T19:02:03.466638+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_1 is clicked
+2022-01-06T19:02:03.467367+0600 INFO User is in Login view 
+2022-01-06T19:02:03.467870+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/btn_next
+2022-01-06T19:02:04.671853+0600 INFO ID: com.bkash.businessapp.uat:id/btn_next is clicked
+2022-01-06T19:02:04.672633+0600 INFO User is in App Home view
+2022-01-06T19:02:04.673146+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/button_action
+2022-01-06T19:02:10.575427+0600 INFO com.bkash.businessapp.uat:id/button_action is giving Change Now
+2022-01-06T19:02:10.576187+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/button_action
+2022-01-06T19:02:10.687196+0600 INFO ID: com.bkash.businessapp.uat:id/button_action is clicked
+2022-01-06T19:02:10.687825+0600 INFO User is in App Home View

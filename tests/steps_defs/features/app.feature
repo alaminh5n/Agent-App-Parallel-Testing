@@ -11,7 +11,22 @@ Feature: Agent app is a business app
 Background:
   Given the Agent app will be opened in mobile
 
-  @login
+  @successful-onboard
+  Scenario: successful on-boarding of valid agent
+    Given app registration page is displayed
+    When the user will change the language
+    And the user will insert agent number "01321188766"
+    And the user will click Next
+    And the user will select operator
+    And the user will allow app to read and insert OTP
+    Then the user will see the pin field text "Agent PIN"
+    And the user will insert login pin
+    And the user will press login
+    And the user will turn on the agent status
+    And the user will be on home page
+    And close the app
+
+  @onboarded
   Scenario: successful login
     Given app login page is displayed
     When the user will change the language
@@ -20,6 +35,7 @@ Background:
     Then the user will be on home page
     And close the app
 
+  @onboarded
   Scenario: successful cash in
     Given app is in home page
     When the user will tap on Cash In
@@ -33,6 +49,7 @@ Background:
     Then the user will see this message "Your Cash In transfer is complete."
     And close the app
 
+  @onboarded
   Scenario: successful b2b transfer
     Given app is in home page
     When the user will tap on b2b transfer
@@ -47,6 +64,7 @@ Background:
     And the user will press on very good
     And close the app
 
+  @onboarded
   Scenario: successful e money request
     Given app is in home page
     When the user will tap on b2b request
@@ -59,6 +77,7 @@ Background:
     Then the user will see this message "Your E-Money Request is Successful"
     And close the app
 
+  @onboarded
   Scenario: successful cash request
     Given app is in home page
     When the user will tap on b2b request

@@ -1,0 +1,44 @@
+2022-01-06T19:15:29.704302+0600 INFO User is in Registration view 
+2022-01-06T19:15:29.704830+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/btnChangeLanguage
+2022-01-06T19:15:37.013888+0600 INFO com.bkash.businessapp.uat:id/btnChangeLanguage is giving বাংলা
+2022-01-06T19:15:37.014840+0600 INFO User is in Login view 
+2022-01-06T19:15:37.015407+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/et_enter_pin
+2022-01-06T19:15:37.303241+0600 INFO ID: com.bkash.businessapp.uat:id/et_enter_pin is clicked
+2022-01-06T19:15:37.303874+0600 INFO User is in Login view 
+2022-01-06T19:15:37.304286+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_1
+2022-01-06T19:15:41.267612+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_1 is clicked
+2022-01-06T19:15:41.268685+0600 INFO User is in Login view 
+2022-01-06T19:15:41.269362+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_2
+2022-01-06T19:15:42.605445+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_2 is clicked
+2022-01-06T19:15:42.606176+0600 INFO User is in Login view 
+2022-01-06T19:15:42.608006+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_1
+2022-01-06T19:15:43.470601+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_1 is clicked
+2022-01-06T19:15:43.471225+0600 INFO User is in Login view 
+2022-01-06T19:15:43.471633+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_2
+2022-01-06T19:15:44.350211+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_2 is clicked
+2022-01-06T19:15:44.350834+0600 INFO User is in Login view 
+2022-01-06T19:15:44.351243+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/pinpad_button_1
+2022-01-06T19:15:45.558256+0600 INFO ID: com.bkash.businessapp.uat:id/pinpad_button_1 is clicked
+2022-01-06T19:15:45.558981+0600 INFO User is in Login view 
+2022-01-06T19:15:45.559462+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/btn_next
+2022-01-06T19:15:46.757995+0600 INFO ID: com.bkash.businessapp.uat:id/btn_next is clicked
+2022-01-06T19:15:46.758806+0600 INFO User is in App Home view
+2022-01-06T19:15:46.759316+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/button_action
+2022-01-06T19:15:57.160765+0600 ERROR Could not find the element: com.bkash.businessapp.uat:id/button_action
+2022-01-06T19:15:57.161626+0600 INFO com.bkash.businessapp.uat:id/button_action not found
+2022-01-06T19:15:57.162216+0600 INFO User is in App Home View
+2022-01-06T19:15:57.162660+0600 INFO Waiting for the Xpath
+2022-01-06T19:15:57.999792+0600 INFO XPATH: /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView is clicked
+2022-01-06T19:15:58.000155+0600 INFO User is in App Home view
+2022-01-06T19:15:58.000356+0600 INFO Waiting for the Xpath
+2022-01-06T19:15:58.984014+0600 INFO XPATH: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout is clicked
+2022-01-06T19:15:58.984673+0600 INFO User is in Cash-In view
+2022-01-06T19:15:58.985109+0600 INFO Waiting for the Xpath
+2022-01-06T19:16:09.441118+0600 ERROR Could not find the Xpath: /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView
+2022-01-06T19:16:09.441911+0600 INFO tooltip does not exist
+2022-01-06T19:16:09.442354+0600 INFO User is in Cash-In view
+2022-01-06T19:16:09.442768+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/et_enter_search_content
+2022-01-06T19:16:09.774280+0600 INFO 01810189667 has been inserted to com.bkash.businessapp.uat:id/et_enter_search_content
+2022-01-06T19:16:09.775047+0600 INFO User is in Cash-In view
+2022-01-06T19:16:09.775595+0600 INFO Waiting for the element: com.bkash.businessapp.uat:id/btn_next
+2022-01-06T19:16:11.047775+0600 INFO ID: com.bkash.businessapp.uat:id/btn_next is clicked

@@ -1,6 +1,6 @@
 """Agent app is a business app feature tests."""
 import pytest
-from activities.login_view_activity import LoginPinInputActivity
+from activities.login_view_activity import LoginPinInputActivity, LoginPinInputValidation
 from activities.home_activity import HomeActivity, HomeActivityValidation
 from activities.cash_in_activity import CashInActivity
 from activities.b2b_request_activity import B2BRequestActivity
@@ -9,6 +9,7 @@ from activities.common_insert_pin_activity import InsertPinActivity
 from activities.tap_and_hold_activity import TapAndHoldActivity
 from activities.common_success_failure_activities import ConfirmationValidation, ConfirmationActivity
 from activities.registration_activity import RegistrationActivity
+from activities.registration_otp_input import RegistrationOTPInput
 from driver.appium_driver import AppiumDriver
 
 
@@ -37,6 +38,11 @@ def login():
 # =============================================================
 # ====================== All Scenarios ========================
 # =============================================================
+
+
+@scenario('features/app.feature', 'successful on-boarding of valid agent')
+def test_successful_on_boarding_of_valid_agent():
+    """successful on-boarding of valid agent"""
 
 
 @scenario('features/app.feature', 'successful login')
@@ -68,15 +74,21 @@ def test_successful_cash_request():
 # ====================== All Given ============================
 # =============================================================
 
+@given('app registration page is displayed')
+def app_registration_page_is_displayed():
+    """app registration page is displayed"""
+
 
 @given('app is in home page')
 def app_is_in_home_page(login):
     """app is in home page."""
+    HomeActivity().click_okay_on_tooltip()
 
 
 @given('app login page is displayed')
 def app_login_page_is_displayed():
     """app login page is displayed."""
+    AppiumDriver().launch_the_app()
 
 
 @given('the Agent app will be opened in mobile')
@@ -102,17 +114,43 @@ def the_user_will_click_proceed_to_the_next_step():
 
 
 @when(parsers.parse('the user will insert amount "{amount}"'))
-def the_user_will_insert_amount_150(amount):
+def the_user_will_insert_amount(amount):
     """the user will insert amount "150"."""
     InsertAmountActivity().enter_amount(amount)
 
 
 @when(parsers.parse('the user will insert customer number "{customer_number}"'))
-def the_user_will_insert_customer_number_01810189667(customer_number):
+def the_user_will_insert_customer_number(customer_number):
     """the user will insert customer number "01810189667"."""
+    CashInActivity().click_okay_on_tooltip()
     CashInActivity().enter_customer_numer(customer_number)
 
 
+@when(parsers.parse('the user will insert agent number "{agent_number}"'))
+def the_user_will_insert_agent_number(agent_number):
+    """the user will insert agent number "01810189668"."""
+    RegistrationActivity().enter_mobile_number(agent_number)
+
+
+@when('the user will click Next')
+def the_user_will_click_next():
+    """the user will click Next"""
+    RegistrationActivity().click_on_next()
+
+
+@when('the user will select operator')
+def the_user_will_select_operator():
+    """the user will select operator"""
+    RegistrationActivity().operator_selection()
+
+
+@when('the user will allow app to read and insert OTP')
+def the_user_will_allow_app_to_read_and_insert_otp():
+    """the user will allow app to read and insert OTP"""
+    RegistrationOTPInput().click_on_allow_to_read_and_insert_the_otp()
+
+
+@then('the user will insert login pin')
 @when('the user will insert login pin')
 def the_user_will_insert_login_pin():
     """the user will insert login pin."""
@@ -147,10 +185,12 @@ def the_user_will_press_confirm():
     InsertPinActivity().press_confirm()
 
 
+@then('the user will press login')
 @when('the user will press login')
 def the_user_will_press_login():
     """the user will press login."""
     LoginPinInputActivity().press_login()
+    HomeActivity().click_okay_on_tooltip()
 
 
 @when('the user will press proceed to the next step')
@@ -215,6 +255,12 @@ def the_user_will_see_this_message_your_cash_in_transfer_is_complete(text):
     assert ConfirmationValidation().get_confirmation_title() == text
 
 
+@then(parsers.parse('the user will see the pin field text "{text}"'))
+def the_user_will_see_the_pin_field_text(text):
+    """the user will see the pin field text "Agent PIN"."""
+    assert LoginPinInputValidation().get_the_text_of_pin_input_field() == text
+
+
 @then('the user will click yes on the confirmation')
 def the_user_will_click_yes_on_the_confirmation():
     """the user will click yes on the confirmation"""
@@ -231,4 +277,10 @@ def the_user_will_press_on_very_good():
 def the_user_will_press_back_to_home():
     """the user will press back to home"""
     ConfirmationActivity().press_on_back_to_home()
+
+
+@then('the user will turn on the agent status')
+def the_user_will_turn_on_the_agent_status():
+    """the user will turn on the agent status"""
+    HomeActivity().turn_on_agent_status()
 

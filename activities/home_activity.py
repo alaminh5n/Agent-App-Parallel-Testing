@@ -1,5 +1,6 @@
 from driver.appium_driver import AppiumDriver
 from loguru import logger
+from appium.webdriver.common.mobileby import By
 
 
 class HomeActivity(AppiumDriver):
@@ -12,7 +13,10 @@ class HomeActivity(AppiumDriver):
     def turn_on_agent_status(self):
         logger.info("User is in App Home view")
         locator = 'com.bkash.businessapp.uat:id/button_action'
-        self.click_helper(locator, 'ID')
+        try:
+            self.click_helper(locator, 'ID')
+        except:
+            logger.info(f"{locator} not found because agent status is on")
 
     def click_on_cash_in(self):
         logger.info("User is in App Home view")
@@ -48,6 +52,14 @@ class HomeActivity(AppiumDriver):
         logger.info("User is in App Home view")
         locator = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[5]/android.widget.ImageView'
         self.click_helper(locator, 'XPATH')
+
+    def click_okay_on_tooltip(self):
+        logger.info("User is in App Home View")
+        locator = '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView'
+        try:
+            self.click_helper(locator, 'XPATH')
+        except:
+            logger.info("tooltip does not exist")
 
 
 class HomeActivityValidation(AppiumDriver):

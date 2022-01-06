@@ -54,7 +54,6 @@ class AppiumDriver:
     #     # **for_pixel
     #     **for_samsung
     # )
-
     # driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_capabilities=desired_caps)
 
     def wait_for_element(self, locator):

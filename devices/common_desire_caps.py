@@ -6,12 +6,12 @@ android_common_desired_caps = {
     "newCommandTimeout": 60,
     "deviceReadyTimeout": 60,
     "adbExecTimeout": 20000,
-    # "app": APK_PATH,
+    "app": APK_PATH,
     "appPackage": APK_PACKAGE_NAME,
     "appActivity": APP_ACTIVITY,
     "autoGrantPermissions": True,
     "noReset": True,
-
+    "fullReset": False,
 }
 
 for_pixel = {
