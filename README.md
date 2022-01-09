@@ -12,14 +12,13 @@ Python 3.8, Appium, Pytest-BDD, Allure Reports, Pytest-Xdists
 5. Install virtualenv from https://virtualenv.pypa.io/en/latest/installation.html
 
 
-##Solution Explained
+## Solution Explained
 This script can auto-detect the device info from environment and test the test cases
 in multiple devices. As a result test execution time improves significantly. Find below
 the time taken for all test case execution in local machine.
 
-P.S: On-boarding could not be performed in multiple device due to sim card dependency
-All these cases are run in previously installed and on-boarded app. If you want to perform
-installing and On-boarding that should be in single device only.
+P.S: On-boarding can not be performed in multiple device due to sim card dependency.
+On-boarding can be performed only one device at a time.
 
 #### 1 Device
 203.21s
@@ -28,8 +27,9 @@ installing and On-boarding that should be in single device only.
 
 ### Test Markers
 Two markers have benn introduced.
-1. agent -> Run all the test cases (without on-board)
-2. on-board -> Run all the test cases including on-board
+1. agent -> Run all the test cases (with on-boarding)
+2. successful-onboard -> Only on-boarding scenario will run
+3. onboarded -> Test Cases will run from login screen (no on-boarding)
 
 
 
@@ -63,9 +63,15 @@ pip install -r requirements.txt
 ### Before Running the tests 
 1. Start the appium server
 2. Connect devices with cable 
-3. Install agent app form: -> BusinessApp_debug_2.3.2-UAT-DEBUG.apk
-4. On-board the Agent account according to Sim inserted that specific devices
 
+#### Run all cases including on-boarding (single device)
+1. make sure only one device is connected
+2. set the test marker "agent"
+
+#### Run all cases without on-boarding (multiple devices)
+1. Install agent app: -> BusinessApp_debug_2.3.2-UAT-DEBUG.apk
+2. On-board the Agent account according to Sim inserted that specific devices
+3. set the test marker "onboarded"
 
 ### Run tests
 To run tests, runner.py has been introduced.
