@@ -26,10 +26,10 @@ On-boarding can be performed only one device at a time.
 147.81s
 
 ### Test Markers
-Two markers have benn introduced.
 1. agent -> Run all the test cases (with on-boarding)
 2. successful-onboard -> Only on-boarding scenario will run
 3. onboarded -> Test Cases will run from login screen (no on-boarding)
+4. onboarded-negative -> These are negative testcase
 
 
 

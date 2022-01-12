@@ -102,7 +102,7 @@ Background:
     Then the user will see this message "Your Cash Request is Successful"
     And close the app
 
-  @onboarded
+  @onboarded @onboarded-negative
   Scenario: unsuccessful login due to incorrect pin
     Given app login page is displayed
     When the user will change the language
