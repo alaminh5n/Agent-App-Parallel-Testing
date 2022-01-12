@@ -1,6 +1,7 @@
 """Agent app is a business app feature tests."""
 import pytest
 from activities.login_view_activity import LoginPinInputActivity, LoginPinInputValidation
+from activities.common_banner import BannerActivity,BannerValidation
 from activities.home_activity import HomeActivity, HomeActivityValidation
 from activities.cash_in_activity import CashInActivity
 from activities.b2b_request_activity import B2BRequestActivity
@@ -50,6 +51,11 @@ def test_successful_login():
     """successful login."""
 
 
+@scenario('features/app.feature', 'unsuccessful login twice due to incorrect pin and see Attention message')
+def test_unsuccessful_login_twice_due_to_incorrect_pin_and_see_attention_message():
+    """unsuccessful login twice due to incorrect pin and see Attention message"""
+
+
 @scenario('features/app.feature', 'successful cash in')
 def test_successful_cash_in():
     """successful cash in."""
@@ -68,6 +74,11 @@ def test_successful_e_money_request():
 @scenario('features/app.feature', 'successful cash request')
 def test_successful_cash_request():
     """successful cash request"""
+
+
+@scenario('features/app.feature', 'unsuccessful login due to incorrect pin')
+def test_unsuccessful_login_due_to_incorrect_pin():
+    """unsuccessful login due to incorrect pin"""
 
 
 # =============================================================
@@ -150,6 +161,17 @@ def the_user_will_allow_app_to_read_and_insert_otp():
     RegistrationOTPInput().click_on_allow_to_read_and_insert_the_otp()
 
 
+@when('the user will insert incorrect login pin')
+def the_user_will_insert_incorrect_login_pin():
+    """the user will insert incorrect login pin"""
+    LoginPinInputActivity().click_on_input_pin()
+    LoginPinInputActivity().press_key(1)
+    LoginPinInputActivity().press_key(2)
+    LoginPinInputActivity().press_key(1)
+    LoginPinInputActivity().press_key(2)
+    LoginPinInputActivity().press_key(3)
+
+
 @then('the user will insert login pin')
 @when('the user will insert login pin')
 def the_user_will_insert_login_pin():
@@ -229,6 +251,12 @@ def the_user_will_click_on_cash_request():
     B2BRequestActivity().click_on_cash_request()
 
 
+@when('the user will click cross button to close the banner')
+def the_user_will_click_cross_button_to_close_the_banner():
+    """the user will click cross button to close the banner"""
+    BannerActivity().click_on_close_button()
+
+
 # =============================================================
 # ====================== All then =============================
 # =============================================================
@@ -259,6 +287,13 @@ def the_user_will_see_this_message_your_cash_in_transfer_is_complete(text):
 def the_user_will_see_the_pin_field_text(text):
     """the user will see the pin field text "Agent PIN"."""
     assert LoginPinInputValidation().get_the_text_of_pin_input_field() == text
+
+
+@then(parsers.parse('the user will see error banner with "{text}" message'))
+def the_user_will_see_error_banner_with_text_message(text):
+    """the user will see error banner with "Incorrect PIN" message"""
+    """the user will see error banner with "Attention! One more incorrect attempt will lock your PIN" message"""
+    assert BannerValidation().get_banner_text() == text
 
 
 @then('the user will click yes on the confirmation')

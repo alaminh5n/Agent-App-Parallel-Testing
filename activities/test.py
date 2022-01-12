@@ -7,6 +7,7 @@ from activities.common_insert_pin_activity import InsertPinActivity
 from activities.tap_and_hold_activity import TapAndHoldActivity
 from activities.common_success_failure_activities import ConfirmationValidation
 from activities.registration_activity import RegistrationActivity
+from activities.common_banner import BannerValidation
 
 # RegistrationActivity().change_language_to_english()
 # LoginPinInputActivity().click_on_input_pin()
@@ -14,8 +15,9 @@ from activities.registration_activity import RegistrationActivity
 # LoginPinInputActivity().press_key(2)
 # LoginPinInputActivity().press_key(1)
 # LoginPinInputActivity().press_key(2)
-# LoginPinInputActivity().press_key(1)
+# LoginPinInputActivity().press_key(3)
 # LoginPinInputActivity().press_login()
+# print(BannerValidation().get_banner_text())
 # HomeActivity().turn_on_agent_status()
 # HomeActivity().click_okay_on_tooltip()
 # HomeActivity().click_on_cash_in()

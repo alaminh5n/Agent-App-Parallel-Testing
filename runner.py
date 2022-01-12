@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 import subprocess
-import marker as marker
+
 
 from utils.functions import (
     adb_get_device_udids,
@@ -17,7 +17,7 @@ hub_host = "127.0.0.1"
 hub_port = "4723"
 hub_protocol = "http"
 num_device = "0"
-marker = "agent"
+marker = "onboarded"
 
 parser = argparse.ArgumentParser()
 

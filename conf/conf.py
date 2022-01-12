@@ -1,8 +1,6 @@
 import os
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-# APK_PACKAGE_NAME = 'app.choco.dummyqa'
-# APP_ACTIVITY = 'SplashScreenActivity'
 
 APK_PACKAGE_NAME = 'com.bkash.businessapp.uat'
 APP_ACTIVITY = 'com.bkash.businessapp.ui.activity.SplashActivity'
