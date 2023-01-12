@@ -68,5 +68,6 @@ test_env = os.environ.copy()
 subprocess.call(["python3", "-m", "pytest",
                 "-n", num_device,
                  "-k", marker,
+                 "--dist=each",
                  "--alluredir=./test_result",
                  "-p", "no:cacheprovider", "--disable-pytest-warnings"], env=test_env)

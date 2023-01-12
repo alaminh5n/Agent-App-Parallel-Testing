@@ -8,6 +8,21 @@ from activities.tap_and_hold_activity import TapAndHoldActivity
 from activities.common_success_failure_activities import ConfirmationValidation
 from activities.registration_activity import RegistrationActivity
 from activities.common_banner import BannerValidation
+from activities.paybill_activity import PayBillActivity
+from time import sleep
+
+
+RegistrationActivity().change_language_to_english()
+LoginPinInputActivity().click_on_input_pin()
+LoginPinInputActivity().press_key(1)
+LoginPinInputActivity().press_key(2)
+LoginPinInputActivity().press_key(1)
+LoginPinInputActivity().press_key(2)
+LoginPinInputActivity().press_key(1)
+LoginPinInputActivity().press_login()
+HomeActivity().click_on_pay_bill()
+sleep(5)
+PayBillActivity().click_on_DESCO_prepaid()
 
 # RegistrationActivity().change_language_to_english()
 # LoginPinInputActivity().click_on_input_pin()

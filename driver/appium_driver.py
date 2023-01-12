@@ -14,47 +14,50 @@ logger.add("logs/file_{time}.log", format="{time} {level} {message}", level="INF
 
 
 class AppiumDriver:
-    driver = None
-    ANDROID = 'android'
-    desired_caps = None
+    # driver = None
+    # ANDROID = 'android'
+    # desired_caps = None
+    #
+    # if "DEVICE_TYPE" not in os.environ:
+    #     logger.critical(f"Env Variable 'device_type' is not set")
+    #     raise EnvVariableNotSetException(f"Env Variable 'device_type' is not set")
+    #
+    # if "HUB_URL" not in os.environ:
+    #     logger.critical(f"Env variable 'hub_url' is not set")
+    #     raise EnvVariableNotSetException(f"Env variable 'hub_url' is not set")
+    #
+    # device_type = os.getenv('DEVICE_TYPE')
+    # logger.info(f'Testing for device type {device_type}')
+    # hub_url = os.getenv('HUB_URL')
+    # logger.info(f'Appium server url is {hub_url}')
+    #
+    # if driver is None:
+    #     if device_type.lower() == ANDROID:
+    #         android_desired_cap = get_android_desired_caps_from_os_env()
+    #         desired_caps = {
+    #             **android_common_desired_caps,
+    #             **android_desired_cap
+    #         }
+    #     else:
+    #         logger.critical(f'Invalid device type provided')
+    #         raise InvalidDeviceTypeException("Invalid device type provided")
+    #
+    # try:
+    #     driver = webdriver.Remote(command_executor=hub_url, desired_capabilities=desired_caps)
+    #     logger.info(f'Connected to the appium server')
+    # except Exception as e:
+    #     logger.critical(f'Could not connect to appium server.')
+    #     raise AppiumConnectionFailException("Could not connect to appium server.")
 
-    if "DEVICE_TYPE" not in os.environ:
-        logger.critical(f"Env Variable 'device_type' is not set")
-        raise EnvVariableNotSetException(f"Env Variable 'device_type' is not set")
-
-    if "HUB_URL" not in os.environ:
-        logger.critical(f"Env variable 'hub_url' is not set")
-        raise EnvVariableNotSetException(f"Env variable 'hub_url' is not set")
-
-    device_type = os.getenv('DEVICE_TYPE')
-    logger.info(f'Testing for device type {device_type}')
-    hub_url = os.getenv('HUB_URL')
-    logger.info(f'Appium server url is {hub_url}')
-
-    if driver is None:
-        if device_type.lower() == ANDROID:
-            android_desired_cap = get_android_desired_caps_from_os_env()
-            desired_caps = {
-                **android_common_desired_caps,
-                **android_desired_cap
-            }
-        else:
-            logger.critical(f'Invalid device type provided')
-            raise InvalidDeviceTypeException("Invalid device type provided")
-
-    try:
-        driver = webdriver.Remote(command_executor=hub_url, desired_capabilities=desired_caps)
-        logger.info(f'Connected to the appium server')
-    except Exception as e:
-        logger.critical(f'Could not connect to appium server.')
-        raise AppiumConnectionFailException("Could not connect to appium server.")
-
-    # desired_caps = dict(
-    #     **android_common_desired_caps,
-    #     # **for_pixel
-    #     **for_samsung
-    # )
-    # driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_capabilities=desired_caps)
+    android_desired_cap = get_android_desired_caps_from_os_env()
+    desired_caps = dict(
+        **android_common_desired_caps,
+        **android_desired_cap
+        # **for_pixel
+        # **for_samsung
+    )
+    driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_capabilities=desired_caps)
+    # driver.switch_to.context('NATIVE_APP')
 
     def wait_for_element(self, locator):
         logger.info(f'Waiting for the element: {locator}')
@@ -81,6 +84,11 @@ class AppiumDriver:
     def close_app_(self):
         self.driver.close_app()
         logger.info(f'App is closed')
+
+    def launch_the_app_for_onboard(self):
+        self.driver.reset()
+        self.driver.launch_app()
+        logger.info(f'App is launched for onboard')
 
     def launch_the_app(self):
         self.driver.launch_app()
@@ -122,3 +130,13 @@ class AppiumDriver:
         except Exception as e:
             logger.error(f'Could not get the text from {locator}')
             raise CouldNotExecute(f'Could not get the text from {locator}')
+
+    def switch_native_to_flutter(self):
+        self.driver.switch_to.context('FLUTTER')
+
+    def switch_flutter_to_native(self):
+        self.driver.switch_to.context('NATIVE_APP')
+
+    # def __del__(self):
+    #     logger.info("closing driver")
+    #     self.driver.close()

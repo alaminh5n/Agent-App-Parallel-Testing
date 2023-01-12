@@ -11,11 +11,11 @@ Feature: Agent app is a business app
 Background:
   Given the Agent app will be opened in mobile
 
-  @successful-onboard
+  @onboarded
   Scenario: successful on-boarding of valid agent
     Given app registration page is displayed
     When the user will change the language
-    And the user will insert agent number "01321188766"
+    And the user will insert agent number
     And the user will click Next
     And the user will select operator
     And the user will allow app to read and insert OTP

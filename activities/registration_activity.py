@@ -1,3 +1,4 @@
+import os
 from driver.appium_driver import AppiumDriver
 from loguru import logger
 
@@ -12,8 +13,9 @@ class RegistrationActivity(AppiumDriver):
 
     def enter_mobile_number(self, number='01321188766'):
         logger.info("User is in Registration view ")
+        logger.info(AppiumDriver.desired_caps)
         locator = 'com.bkash.businessapp.uat:id/etEntryAccountNumber'
-        self.send_key_helper(locator, number)
+        self.send_key_helper(locator, os.environ[AppiumDriver.desired_caps.get('deviceName')])
 
     def click_on_next(self):
         logger.info("User is in Registration view ")

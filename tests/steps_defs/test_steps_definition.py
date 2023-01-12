@@ -88,6 +88,7 @@ def test_unsuccessful_login_due_to_incorrect_pin():
 @given('app registration page is displayed')
 def app_registration_page_is_displayed():
     """app registration page is displayed"""
+    AppiumDriver().launch_the_app_for_onboard()
 
 
 @given('app is in home page')
@@ -137,10 +138,10 @@ def the_user_will_insert_customer_number(customer_number):
     CashInActivity().enter_customer_numer(customer_number)
 
 
-@when(parsers.parse('the user will insert agent number "{agent_number}"'))
-def the_user_will_insert_agent_number(agent_number):
+@when(parsers.parse('the user will insert agent number'))
+def the_user_will_insert_agent_number():
     """the user will insert agent number "01810189668"."""
-    RegistrationActivity().enter_mobile_number(agent_number)
+    RegistrationActivity().enter_mobile_number()
 
 
 @when('the user will click Next')

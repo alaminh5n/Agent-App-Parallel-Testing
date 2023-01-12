@@ -2,6 +2,7 @@ from conf.conf import APP_ACTIVITY, APK_PACKAGE_NAME, APK_PATH
 
 android_common_desired_caps = {
     "platformName": "Android",
+    # "automationName": "FLUTTER",
     "automationName": "UiAutomator2",
     "newCommandTimeout": 60,
     "deviceReadyTimeout": 60,
@@ -12,6 +13,8 @@ android_common_desired_caps = {
     "autoGrantPermissions": True,
     "noReset": True,
     "fullReset": False,
+    "retryBackoffTime": 500,
+    "maxRetryCount": 20,
 }
 
 for_pixel = {

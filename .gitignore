@@ -1,0 +1,7 @@
+*/__pycache__
+*/*/__pycache__
+activities/logs
+logs/
+data/apps
+test_result
+.idea

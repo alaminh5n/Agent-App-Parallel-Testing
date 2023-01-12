@@ -14,7 +14,7 @@ def get_android_desired_caps_from_os_env():
 
     for temp in range(num_workers):
         if os.getenv('PYTEST_XDIST_WORKER') == worker_name + str(temp):
-            desired_caps['systemPort'] = android_system_port + increment_system_port_by * temp
+            # desired_caps['systemPort'] = android_system_port + increment_system_port_by * temp
             desired_caps['udid'] = os.environ[udid + str(temp)]
             desired_caps['platformVersion'] = os.environ[android_device_os + str(temp)]
             desired_caps['deviceName'] = os.environ[android_device_name + str(temp)]
