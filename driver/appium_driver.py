@@ -56,9 +56,15 @@ class AppiumDriver:
         # **for_pixel
         # **for_samsung
     )
+    # driver = None
     driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_capabilities=desired_caps)
+    # def create_driver(self):
+    #     self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_capabilities=self.desired_caps)
+
     # driver.switch_to.context('NATIVE_APP')
 
+
+# class AppiumDriverHelper(AppiumDriver):
     def wait_for_element(self, locator):
         logger.info(f'Waiting for the element: {locator}')
         wait = WebDriverWait(self.driver, 10)

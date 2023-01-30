@@ -1,6 +1,7 @@
 import os
 from driver.appium_driver import AppiumDriver
 from loguru import logger
+from data.sim_number import *
 
 
 class RegistrationActivity(AppiumDriver):
@@ -13,7 +14,6 @@ class RegistrationActivity(AppiumDriver):
 
     def enter_mobile_number(self, number='01321188766'):
         logger.info("User is in Registration view ")
-        logger.info(AppiumDriver.desired_caps)
         locator = 'com.bkash.businessapp.uat:id/etEntryAccountNumber'
         self.send_key_helper(locator, os.environ[AppiumDriver.desired_caps.get('deviceName')])
 
@@ -24,5 +24,6 @@ class RegistrationActivity(AppiumDriver):
 
     def operator_selection(self):
         logger.info("User is in Registration view ")
-        locator ='/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.ImageView'
+        locator = "//android.widget.FrameLayout[1]/android.widget.ImageView"
+        # locator ='/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.ImageView'
         self.click_helper(locator, 'XPATH')

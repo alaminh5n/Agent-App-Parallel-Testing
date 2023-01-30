@@ -25,6 +25,7 @@ from pytest_bdd import (
 
 @pytest.fixture(scope='function')
 def login():
+    # AppiumDriver().create_driver()
     AppiumDriver().launch_the_app()
     RegistrationActivity().change_language_to_english()
     LoginPinInputActivity().click_on_input_pin()
@@ -81,15 +82,24 @@ def test_unsuccessful_login_due_to_incorrect_pin():
     """unsuccessful login due to incorrect pin"""
 
 
+@scenario('features/app.feature', 'duplicate transaction detection while cash in')
+def test_duplicate_transaction_detection_while_cash_in():
+    """duplicate transaction detection while cash in"""
+
+
 # =============================================================
 # ====================== All Given ============================
 # =============================================================
 
+
 @given('app registration page is displayed')
 def app_registration_page_is_displayed():
     """app registration page is displayed"""
+    """app registration page is displayed"""
+    # main = AppiumDriverHelper()
+    # main.create_driver()
+    # main.launch_the_app_for_onboard()
     AppiumDriver().launch_the_app_for_onboard()
-
 
 @given('app is in home page')
 def app_is_in_home_page(login):
@@ -309,6 +319,7 @@ def the_user_will_press_on_very_good():
     HomeActivity().click_on_very_good()
 
 
+@when('the user will press back to home')
 @then('the user will press back to home')
 def the_user_will_press_back_to_home():
     """the user will press back to home"""

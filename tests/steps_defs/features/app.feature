@@ -61,6 +61,7 @@ Background:
     Then the user will see this message "Your Cash In transfer is complete."
     And close the app
 
+
   @onboarded
   Scenario: successful b2b transfer
     Given app is in home page
@@ -109,4 +110,24 @@ Background:
     And the user will insert incorrect login pin
     And the user will press login
     Then the user will see error banner with "Incorrect PIN" message
+    And close the app
+
+  @onboarded
+  Scenario: duplicate transaction detection while cash in
+    Given app is in home page
+    When the user will tap on Cash In
+    And the user will insert customer number "01810189667"
+    And the user will click proceed to the next step
+    And the user will insert amount "65"
+    And the user will press proceed to the next step
+    And the user will insert pin
+    And the user will press confirm
+    And the user will press Tap and hold
+    And the user will press back to home
+    And the user will tap on Cash In
+    And the user will insert customer number "01810189667"
+    And the user will click proceed to the next step
+    And the user will insert amount "65"
+    And the user will press proceed to the next step
+    Then the user will see error banner with "Duplicate for All Transactions" message
     And close the app

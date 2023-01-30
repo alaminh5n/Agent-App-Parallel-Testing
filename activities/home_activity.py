@@ -52,8 +52,8 @@ class HomeActivity(AppiumDriver):
 
     def click_on_very_good(self):
         logger.info("User is in App Home view")
-        locator = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[5]/android.widget.ImageView'
-        self.click_helper(locator, 'XPATH')
+        locator = 'com.bkash.businessapp.uat:id/linear_layout_b2b_transfer_rating_very_good'
+        self.click_helper(locator, 'ID')
 
     def click_okay_on_tooltip(self):
         logger.info("User is in App Home View")
